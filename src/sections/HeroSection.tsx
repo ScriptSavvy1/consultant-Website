@@ -2,12 +2,15 @@ import Link from "next/link";
 
 export default function HeroSection() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-white via-accent/30 to-white">
-            {/* Background decorations */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent-blue/20 rounded-full translate-y-1/2 -translate-x-1/3" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-gray-200/50">
+            {/* Line Pattern Overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+            {/* Abstract Silver/Transparent Background decorations */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-gray-300/40 to-transparent rounded-full -translate-y-1/4 translate-x-1/3 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-gray-200/40 to-transparent rounded-full translate-y-1/4 -translate-x-1/4 blur-3xl pointer-events-none" />
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Content */}
                     <div className="animate-fade-in-up">
