@@ -73,18 +73,22 @@ export default function GoodPracticesSection() {
                 />
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {practices.map((p) => (
+                    {practices.map((p, index) => (
                         <div
                             key={p.title}
-                            className="bg-white rounded-2xl p-7 border border-border-light shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(27,110,194,0.1)] transition-all duration-300 hover:-translate-y-1"
+                            className="group bg-white rounded-3xl p-8 border border-border-light hover:border-primary/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(236,171,43,0.15)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+                            style={{ animationDelay: `${index * 100}ms` }}
                         >
-                            <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center text-primary mb-5">
+                            {/* Hover Accent Line */}
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-900 to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+                            <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-[0_4px_15px_rgba(236,171,43,0.3)]">
                                 {p.icon}
                             </div>
-                            <h3 className="text-lg font-bold text-secondary mb-3">
+                            <h3 className="text-xl font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors duration-300">
                                 {p.title}
                             </h3>
-                            <p className="text-text-body text-sm leading-relaxed">
+                            <p className="text-text-body text-base leading-relaxed">
                                 {p.description}
                             </p>
                         </div>

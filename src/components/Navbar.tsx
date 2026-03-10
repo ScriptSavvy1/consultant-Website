@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import LogoImage from "./Logo.webp";
 
 const navLinks = [
     { href: "/", label: "Home" },
@@ -32,25 +34,20 @@ export default function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                        ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
-                        : "bg-white"
+                    ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+                    : "bg-white"
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm tracking-wider">
-                                DCG
-                            </div>
-                            <div className="hidden sm:block">
-                                <span className="text-secondary font-bold text-lg leading-tight block">
-                                    Dhiirane
-                                </span>
-                                <span className="text-text-light text-[11px] tracking-wider uppercase">
-                                    Consulting Group
-                                </span>
-                            </div>
+                        <Link href="/" className="flex items-center group py-2">
+                            <Image
+                                src={LogoImage}
+                                alt="DCG Logo"
+                                className="h-12 w-auto max-w-[180px] sm:h-14 sm:max-w-[220px] object-contain"
+                                priority
+                            />
                         </Link>
 
                         {/* Desktop Nav */}
@@ -60,8 +57,8 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${pathname === link.href
-                                            ? "text-primary bg-accent"
-                                            : "text-text-body hover:text-primary hover:bg-accent/50"
+                                        ? "text-primary bg-accent"
+                                        : "text-text-body hover:text-primary hover:bg-accent/50"
                                         }`}
                                 >
                                     {link.label}
@@ -127,11 +124,12 @@ export default function Navbar() {
                     <div className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-white shadow-2xl animate-slide-in">
                         {/* Close Button */}
                         <div className="flex items-center justify-between p-6 border-b border-border-light">
-                            <div className="flex items-center gap-2">
-                                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xs">
-                                    DCG
-                                </div>
-                                <span className="font-bold text-secondary">Dhiirane</span>
+                            <div className="flex items-center py-1">
+                                <Image
+                                    src={LogoImage}
+                                    alt="DCG Logo"
+                                    className="h-10 w-auto max-w-[150px] object-contain"
+                                />
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
@@ -161,8 +159,8 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     className={`block px-4 py-3.5 rounded-lg text-base font-medium transition-all duration-200 ${pathname === link.href
-                                            ? "text-primary bg-accent"
-                                            : "text-text-body hover:text-primary hover:bg-accent/50"
+                                        ? "text-primary bg-accent"
+                                        : "text-text-body hover:text-primary hover:bg-accent/50"
                                         }`}
                                 >
                                     {link.label}

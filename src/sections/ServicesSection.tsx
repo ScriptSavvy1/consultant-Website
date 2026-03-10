@@ -56,16 +56,32 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section className="py-20 lg:py-28">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <SectionHeader
-                    title="Our Services"
-                    subtitle="Comprehensive consulting solutions tailored to the unique challenges and opportunities of Somalia and East Africa."
-                />
+        <section className="py-24 lg:py-32 bg-bg-silver relative overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/4 blur-3xl pointer-events-none" />
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {services.map((service) => (
-                        <ServiceCard key={service.title} {...service} />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="mb-16 lg:mb-20">
+                    <SectionHeader
+                        title="Our Services"
+                        subtitle="Comprehensive consulting solutions tailored to the unique challenges and opportunities of Somalia and East Africa."
+                    />
+                </div>
+
+                <div className="grid lg:grid-cols-6 gap-6 lg:gap-8">
+                    {/* Top Row: 2 Cards (wider) */}
+                    {services.slice(0, 2).map((service, index) => (
+                        <div key={service.title} className="lg:col-span-3">
+                            <ServiceCard {...service} className="h-full" />
+                        </div>
+                    ))}
+
+                    {/* Bottom Row: 3 Cards */}
+                    {services.slice(2, 5).map((service, index) => (
+                        <div key={service.title} className="lg:col-span-2">
+                            <ServiceCard {...service} className="h-full" />
+                        </div>
                     ))}
                 </div>
             </div>

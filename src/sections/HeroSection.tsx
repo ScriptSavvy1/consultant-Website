@@ -11,19 +11,19 @@ export default function HeroSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Content */}
                     <div className="animate-fade-in-up">
-                        <div className="inline-flex items-center gap-2 bg-accent/80 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                        <div className="inline-flex items-center gap-2 bg-accent/80 text-secondary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
                             <span className="w-2 h-2 bg-primary rounded-full" />
                             Trusted Consulting Partner in East Africa
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-secondary leading-[1.15] tracking-tight">
                             Local Insight,{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-primary">
                                 Global Expertise
                             </span>
                         </h1>
 
-                        <p className="mt-5 text-lg text-primary font-medium">
+                        <p className="mt-5 text-lg text-secondary font-medium">
                             Empowering institutions across Somalia and East Africa through
                             expert advisory, strategic communications, and capacity-building
                             solutions.
@@ -40,7 +40,7 @@ export default function HeroSection() {
                         <div className="mt-8 flex flex-wrap gap-4">
                             <Link
                                 href="/services"
-                                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark text-white px-7 py-3.5 rounded-xl text-sm font-semibold shadow-[0_4px_14px_rgba(27,110,194,0.35)] hover:shadow-[0_6px_20px_rgba(27,110,194,0.5)] hover:-translate-y-0.5 transition-all duration-200"
+                                className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900 to-primary text-white px-7 py-3.5 rounded-xl text-sm font-semibold shadow-[0_4px_14px_rgba(236,171,43,0.35)] hover:shadow-[0_6px_20px_rgba(236,171,43,0.5)] hover:-translate-y-0.5 transition-all duration-200"
                             >
                                 Explore Our Services
                                 <svg

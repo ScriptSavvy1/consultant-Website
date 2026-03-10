@@ -72,45 +72,52 @@ export default function AboutSection() {
     return (
         <section className="py-20 lg:py-28 bg-bg-silver">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <SectionHeader
-                    title="Who We Are"
-                    subtitle="Bridging local knowledge with global standards to create sustainable impact across East Africa."
-                />
-
-                {/* About Text */}
-                <div className="max-w-3xl mx-auto text-center mb-16">
-                    <p className="text-text-body leading-relaxed mb-4">
-                        Dhiirane Consulting Group (DCG) is a Somali-rooted consulting firm
-                        founded in 2020 to strengthen governance and development across
-                        Somalia and East Africa. DCG was established by experienced
-                        professionals from government, NGOs, and international development
-                        sectors.
-                    </p>
-                    <p className="text-text-body leading-relaxed">
-                        The firm brings together public, private, and civil society
-                        stakeholders to deliver sustainable impact through strategic advisory
-                        and capacity-building.
-                    </p>
-                </div>
-
-                {/* Mission / Vision / Value Cards */}
-                <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                    {cards.map((card) => (
-                        <div
-                            key={card.title}
-                            className="bg-white rounded-2xl p-7 border border-border-light shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(27,110,194,0.1)] transition-all duration-300 hover:-translate-y-1 text-center"
-                        >
-                            <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center text-primary mx-auto mb-5">
-                                {card.icon}
-                            </div>
-                            <h3 className="text-lg font-bold text-secondary mb-3">
-                                {card.title}
-                            </h3>
-                            <p className="text-text-body text-sm leading-relaxed">
-                                {card.description}
+                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    {/* Left Column: Text Content */}
+                    <div>
+                        <SectionHeader
+                            title="Who We Are"
+                            align="left"
+                        />
+                        <div className="space-y-6 mt-8">
+                            <p className="text-text-body text-lg leading-relaxed">
+                                Dhiirane Group is a multidisciplinary platform organization dedicated to building ideas, institutions, and enterprises that create lasting social and economic value.
                             </p>
+                            <p className="text-text-body text-lg leading-relaxed">
+                                The group operates as an umbrella structure that brings together a diverse portfolio of initiatives, businesses, and programs across multiple sectors. These range from strategic advisory and consultancy services to research, policy dialogue, innovation projects, community programs, and business ventures.
+                            </p>
+                            <div className="pl-6 border-l-4 border-primary italic text-text-body mt-8">
+                                <p className="leading-relaxed">
+                                    At its core, Dhiirane Group serves as a hub for knowledge, collaboration, and enterprise development, connecting experts, institutions, businesses, and communities to solve complex challenges and unlock new opportunities.
+                                </p>
+                            </div>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Right Column: Mission / Vision / Value Cards */}
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-primary/5 rounded-[3rem] -rotate-3 scale-105 z-0"></div>
+                        <div className="relative z-10 grid gap-6">
+                            {cards.map((card, index) => (
+                                <div
+                                    key={card.title}
+                                    className={`bg-white rounded-2xl p-6 border border-border-light shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex gap-5 items-start ${index === 1 ? 'lg:translate-x-8' : ''}`}
+                                >
+                                    <div className="w-14 h-14 shrink-0 rounded-xl bg-accent flex items-center justify-center text-primary">
+                                        {card.icon}
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-secondary mb-2">
+                                            {card.title}
+                                        </h3>
+                                        <p className="text-text-body text-sm leading-relaxed">
+                                            {card.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
