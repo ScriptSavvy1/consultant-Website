@@ -83,7 +83,7 @@ export default function HeroSection() {
                                         />
                                     </svg>
                                 </div>
-                                <span>Since 2020</span>
+                                <span>Strategic Vision</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center">
@@ -101,7 +101,7 @@ export default function HeroSection() {
                                         />
                                     </svg>
                                 </div>
-                                <span>50+ Projects</span>
+                                <span>Proven Impact</span>
                             </div>
                             <div className="hidden sm:flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center">
@@ -119,7 +119,7 @@ export default function HeroSection() {
                                         />
                                     </svg>
                                 </div>
-                                <span>East Africa Focus</span>
+                                <span>Lasting Value</span>
                             </div>
                         </div>
                     </div>
@@ -153,16 +153,16 @@ export default function HeroSection() {
                                     {/* Stats row */}
                                     <div className="grid grid-cols-3 gap-4">
                                         <div className="bg-accent/50 rounded-lg p-3 text-center">
-                                            <div className="text-primary font-bold text-lg">98%</div>
-                                            <div className="text-text-light text-xs">Success</div>
+                                            <div className="text-primary font-bold text-lg">Impact</div>
+                                            <div className="text-text-light text-xs">Driven</div>
                                         </div>
                                         <div className="bg-accent/50 rounded-lg p-3 text-center">
-                                            <div className="text-primary font-bold text-lg">50+</div>
-                                            <div className="text-text-light text-xs">Clients</div>
+                                            <div className="text-primary font-bold text-lg">Value</div>
+                                            <div className="text-text-light text-xs">Creation</div>
                                         </div>
                                         <div className="bg-accent/50 rounded-lg p-3 text-center">
-                                            <div className="text-primary font-bold text-lg">5+</div>
-                                            <div className="text-text-light text-xs">Years</div>
+                                            <div className="text-primary font-bold text-lg">Growth</div>
+                                            <div className="text-text-light text-xs">Sustainable</div>
                                         </div>
                                     </div>
                                 </div>
