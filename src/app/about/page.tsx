@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
     title: "About | Dhiirane Group",
