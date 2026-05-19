@@ -50,7 +50,7 @@ export default function Navbar() {
                             />
                         </Link>
 
-                        {/* Desktop Nav */}
+                        {/* Desktop Nav — CTA removed, ends at last nav link */}
                         <div className="hidden lg:flex items-center gap-1">
                             {navLinks.map((link) => (
                                 <Link
@@ -64,30 +64,6 @@ export default function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
-                        </div>
-
-                        {/* Desktop CTA */}
-                        <div className="hidden lg:block">
-                            <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-[0_4px_14px_rgba(27,110,194,0.35)] hover:shadow-[0_6px_20px_rgba(27,110,194,0.45)] hover:-translate-y-0.5 transition-all duration-200"
-                            >
-                                Get in Touch
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-4 w-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                    />
-                                </svg>
-                            </Link>
                         </div>
 
                         {/* Hamburger */}
@@ -168,10 +144,11 @@ export default function Navbar() {
                             ))}
                         </div>
 
+                        {/* Mobile CTA — kept here */}
                         <div className="p-6 pt-2">
                             <Link
                                 href="/contact"
-                                className="block text-center bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3.5 rounded-lg font-semibold shadow-[0_4px_14px_rgba(27,110,194,0.35)] hover:shadow-[0_6px_20px_rgba(27,110,194,0.45)] transition-all duration-200"
+                                className="block text-center bg-gradient-to-r from-primary to-primary-dark text-secondary px-6 py-3.5 rounded-lg font-semibold shadow-[0_4px_14px_rgba(236,171,43,0.35)] hover:shadow-[0_6px_20px_rgba(236,171,43,0.45)] transition-all duration-200"
                             >
                                 Get in Touch
                             </Link>

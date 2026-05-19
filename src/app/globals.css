@@ -12,7 +12,10 @@
   --color-text-body: #4A5568;
   --color-text-light: #718096;
   --color-border-light: #E2E8F0;
-  --font-sans: 'Inter', sans-serif;
+  --color-gold: #C9A84C;
+  --color-muted: #6B7280;
+  --font-sans: 'DM Sans', 'Inter', sans-serif;
+  --font-heading: 'Instrument Serif', serif;
 }
 
 html {
@@ -24,6 +27,11 @@ body {
   color: var(--color-text-dark);
   font-family: var(--font-sans);
   line-height: 1.7;
+}
+
+/* Heading typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
 
 /* Custom scrollbar */
@@ -87,4 +95,23 @@ body {
 
 .animate-slide-in {
   animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Staggered fade-up for scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stat counter animation */
+@keyframes countPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }

@@ -1,4 +1,7 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const practices = [
     {
@@ -64,9 +67,11 @@ const practices = [
 ];
 
 export default function GoodPracticesSection() {
+    const ref = useScrollReveal();
+
     return (
         <section className="py-20 lg:py-28">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeader
                     title="Good Practices"
                     subtitle="Our commitment to professional excellence is embedded in everything we do."
@@ -80,12 +85,12 @@ export default function GoodPracticesSection() {
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
                             {/* Hover Accent Line */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-900 to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
                             <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-[0_4px_15px_rgba(236,171,43,0.3)]">
                                 {p.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl font-heading text-secondary mb-3 leading-tight group-hover:text-primary transition-colors duration-300">
                                 {p.title}
                             </h3>
                             <p className="text-text-body text-base leading-relaxed">

@@ -18,7 +18,7 @@ export default function SectionHeader({
     return (
         <div className={`mb-14 ${isCentered ? "text-center" : ""}`}>
             <h2
-                className={`text-3xl sm:text-4xl font-bold tracking-tight ${light ? "text-white" : "text-secondary"
+                className={`text-3xl sm:text-4xl font-heading tracking-tight ${light ? "text-white" : "text-secondary"
                     }`}
             >
                 {title}

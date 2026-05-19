@@ -1,5 +1,8 @@
+"use client";
+
 import SectionHeader from "@/components/SectionHeader";
 import TestimonialCard from "@/components/TestimonialCard";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
     {
@@ -29,9 +32,11 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+    const ref = useScrollReveal();
+
     return (
         <section className="py-20 lg:py-28 bg-bg-silver">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionHeader
                     title="Client Testimonials"
                     subtitle="Hear from the organizations and leaders who have partnered with us."
