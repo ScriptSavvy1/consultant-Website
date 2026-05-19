@@ -90,7 +90,7 @@ export default function GoodPracticesSection() {
                             <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-[0_4px_15px_rgba(236,171,43,0.3)]">
                                 {p.icon}
                             </div>
-                            <h3 className="text-xl font-heading text-secondary mb-3 leading-tight group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl font-bold text-secondary mb-3 leading-tight group-hover:text-primary transition-colors duration-300">
                                 {p.title}
                             </h3>
                             <p className="text-text-body text-base leading-relaxed">

@@ -87,7 +87,7 @@ export default function AboutSection() {
                                                     <p className="text-xs tracking-widest uppercase mb-2 text-primary font-semibold">
                                                         {card.label}
                                                     </p>
-                                                    <h3 className="text-xl font-heading text-white mb-3 leading-snug">
+                                                    <h3 className="text-xl font-bold text-white mb-3 leading-snug">
                                                         {card.title}
                                                     </h3>
                                                     <p className="text-sm leading-relaxed text-white/55">

@@ -27,7 +27,7 @@ export default function QuotesSection() {
                             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                             Platform for Progress
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-heading tracking-tight text-secondary leading-tight mb-8">
+                        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-secondary leading-tight mb-8">
                             Ideas.<br />
                             <span className="text-primary">Institutions.</span><br />
                             Impact.
@@ -55,7 +55,7 @@ export default function QuotesSection() {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                             </svg>
                                         </div>
-                                        <p className="text-secondary font-heading text-xl leading-snug">
+                                        <p className="text-secondary font-bold text-xl leading-snug">
                                             {quote}
                                         </p>
                                     </div>
@@ -75,7 +75,7 @@ export default function QuotesSection() {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                                             </svg>
                                         </div>
-                                        <p className="text-secondary font-heading text-xl leading-snug">
+                                        <p className="text-secondary font-bold text-xl leading-snug">
                                             {quote}
                                         </p>
                                     </div>

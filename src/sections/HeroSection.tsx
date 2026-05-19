@@ -1,65 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
-
-function useCountUp(target: number, duration = 800, startCounting = false) {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        if (!startCounting) return;
-
-        let startTime: number | null = null;
-        let animationFrame: number;
-
-        const step = (timestamp: number) => {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-            setCount(Math.floor(eased * target));
-
-            if (progress < 1) {
-                animationFrame = requestAnimationFrame(step);
-            }
-        };
-
-        animationFrame = requestAnimationFrame(step);
-        return () => cancelAnimationFrame(animationFrame);
-    }, [target, duration, startCounting]);
-
-    return count;
-}
+import Image from "next/image";
 
 export default function HeroSection() {
-    const [statsVisible, setStatsVisible] = useState(false);
-    const statsRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const el = statsRef.current;
-        if (!el) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setStatsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.3 }
-        );
-
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, []);
-
-    const projectCount = useCountUp(15, 800, statsVisible);
-    const countryCount = useCountUp(8, 800, statsVisible);
-    const trainedCount = useCountUp(200, 800, statsVisible);
-
     return (
-        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-secondary">
-            {/* Background: SVG geometric grid */}
-            <div className="absolute inset-0 opacity-[0.06]">
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary">
+            {/* Hero background image with overlay */}
+            <div className="absolute inset-0">
+                <Image
+                    src="/hero.png"
+                    alt="Professional consulting team in Mogadishu"
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={90}
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/80 to-secondary/50" />
+                {/* Bottom fade */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-secondary to-transparent" />
+            </div>
+
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 opacity-[0.04]">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -77,7 +41,7 @@ export default function HeroSection() {
                     width: "1px",
                     height: "120%",
                     background: "var(--color-primary)",
-                    opacity: 0.25,
+                    opacity: 0.15,
                     top: "-10%",
                     left: "58%",
                     transform: "rotate(12deg)",
@@ -85,48 +49,22 @@ export default function HeroSection() {
                 }}
             />
 
-            {/* Soft radial glow — bottom left, brand primary */}
-            <div
-                className="absolute pointer-events-none"
-                style={{
-                    width: "600px",
-                    height: "600px",
-                    borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(236,171,43,0.12) 0%, transparent 70%)",
-                    bottom: "-100px",
-                    left: "-100px",
-                }}
-            />
-
-            {/* Soft radial glow — top right */}
-            <div
-                className="absolute pointer-events-none"
-                style={{
-                    width: "400px",
-                    height: "400px",
-                    borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(236,171,43,0.08) 0%, transparent 70%)",
-                    top: "-50px",
-                    right: "-50px",
-                }}
-            />
-
             {/* Hero content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 pt-32 pb-16 lg:pt-40 lg:pb-20">
-                <div className="animate-fade-in-up max-w-3xl">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 py-32 lg:py-40">
+                <div className="animate-fade-in-up max-w-2xl">
                     <div className="inline-flex items-center gap-2 bg-white/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-white/10">
                         <span className="w-2 h-2 bg-primary rounded-full" />
                         Trusted Consulting Partner in East Africa
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-white leading-[1.1] tracking-tight">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
                         Local Insight,{" "}
-                        <span className="text-primary italic">
+                        <span className="text-primary">
                             Global Expertise
                         </span>
                     </h1>
 
-                    <p className="mt-6 text-lg text-white/80 font-medium max-w-2xl">
+                    <p className="mt-6 text-lg text-white/80 font-medium max-w-xl">
                         Empowering institutions across Somalia and East Africa through
                         expert advisory, strategic communications, and capacity-building
                         solutions.
@@ -213,32 +151,6 @@ export default function HeroSection() {
                             <span className="text-white/60">Lasting Value</span>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            {/* Stat bar at bottom */}
-            <div
-                ref={statsRef}
-                className="relative z-10 border-t w-full mt-auto"
-                style={{ borderColor: "rgba(255,255,255,0.08)" }}
-            >
-                <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x"
-                    style={{ "--tw-divide-opacity": "0.08", "--tw-divide-color": "rgba(255,255,255,0.08)" } as React.CSSProperties}
-                >
-                    {[
-                        { number: projectCount, suffix: "+", label: "Projects Delivered" },
-                        { number: countryCount, suffix: "", label: "Partner Countries" },
-                        { number: trainedCount, suffix: "+", label: "Professionals Trained" },
-                    ].map(({ number, suffix, label }) => (
-                        <div key={label} className="py-8 px-6 text-center">
-                            <p className="font-heading text-5xl text-white mb-1">
-                                {number}{suffix}
-                            </p>
-                            <p className="text-sm tracking-widest uppercase text-white/40">
-                                {label}
-                            </p>
-                        </div>
-                    ))}
                 </div>
             </div>
         </section>
